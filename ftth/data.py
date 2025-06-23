@@ -6,9 +6,9 @@ def ip_input(version: int = 4, ip_type: str = 'public') -> str:
     METRO_V4 = [IPv4Network('104.219.32.0/21'), IPv4Network('108.59.176.0/20'), IPv4Network('162.255.8.0/21'), IPv4Network('192.35.200.0/22'),\
                 IPv4Network('199.116.80.0/22'), IPv4Network('216.107.160.0/20')]
     MIKROTIK_V4 = [IPv4Address('108.59.178.219'), IPv4Address('108.59.177.106'), IPv4Address('104.219.32.226'), IPv4Address('104.219.32.62'),\
-                   IPv4Address('108.59.176.150'), IPv4Address('108.59.176.62'), IPv4Address('108.59.178.38')]
+                   IPv4Address('108.59.176.150'), IPv4Address('108.59.176.62'), IPv4Address('108.59.178.38'), IPv4Address('108.59.178.62')]
     MIKROTIK_V6 = [IPv6Address('2607:5380:c001:16::3'), IPv6Address('2607:5380:c001:15::3'), IPv6Address('2607:5380:c001:e::3'),\
-                   IPv6Address('2607:5380:c001:d::3'), IPv6Address('2607:5380:c001:12::3'), IPv6Address('2607:5380:c001:11::3'), IPv6Address('2607:5380:c001:1e::3')]
+                   IPv6Address('2607:5380:c001:d::3'), IPv6Address('2607:5380:c001:12::3'), IPv6Address('2607:5380:c001:11::3'), IPv6Address('2607:5380:c001:1e::3'), IPv6Address('2607:5380:c001:1f::3')]
 
     if version == 4 and ip_type == 'public':
         prompt = 'Input public IPv4 subnet in CIDR notation: '
@@ -124,7 +124,7 @@ def ip_input(version: int = 4, ip_type: str = 'public') -> str:
         return str(gateway)
 
 def get_vlan(vlan_type: str = 'cgnat') -> str:
-    GATEWAY_VLANS = [110, 111, 592, 593]
+    GATEWAY_VLANS = [110, 111, 592, 593, 594]
 
     if vlan_type == 'cgnat':
         prompt = 'Input town VLAN number: '
